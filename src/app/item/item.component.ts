@@ -7,6 +7,7 @@ import { StarWarsService } from '../star-wars.service';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
+
   @Input() character;
 
   constructor(private starWars: StarWarsService) { }

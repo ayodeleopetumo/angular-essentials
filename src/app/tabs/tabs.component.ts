@@ -7,6 +7,7 @@ import { StarWarsService } from 'app/star-wars.service';
   styleUrls: ['./tabs.component.css']
 })
 export class TabsComponent implements OnInit {
+
   chosenList = 'all';
   characters = [];
 
