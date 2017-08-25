@@ -7,10 +7,6 @@ export class StarWarsService {
   private characters = [
     { name: 'Luke Skywalker', side: '' },
     { name: 'Darth Vader', side: '' },
-    { name: 'Anakin Skywalker', side: '' },
-    { name: 'Han Solo', side: '' },
-    { name: 'Darth Maul', side: '' },
-    { name: 'Count Dooku', side: '' }
   ];
 
   constructor(private starWarsLogger: LoggerService) {}
@@ -31,6 +27,16 @@ export class StarWarsService {
     });
     this.characters[position].side = characterInfo.side;
     this.starWarsLogger.starWarLogger(`Changed side of ${characterInfo.name} to the ${characterInfo.side} side`);
+  }
+
+  addCharacter({name, side}) {
+    const position = this.characters.findIndex((character) => {
+      return character.name === name;
+    });
+    if (position !== -1) {
+      return
+    };
+    this.characters.push({name, side});
   }
 
 }
