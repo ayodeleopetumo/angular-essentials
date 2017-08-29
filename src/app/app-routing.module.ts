@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 
 import { TabsComponent } from 'app/tabs/tabs.component';
 import { ListComponent } from 'app/list/list.component';
