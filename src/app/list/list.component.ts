@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class ListComponent implements OnInit, OnDestroy {
   characters;
   loadedSide = 'all';
-  subscription: Subscription<void>;
+  subscription: Subscription;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,6 +25,7 @@ export class ListComponent implements OnInit, OnDestroy {
          this.loadedSide = params.side;
       }
     );
+
     this.subscription = this.starWarsService.charactersChanged.subscribe(
       () => {
         this.characters = this.starWarsService.getCharacters(this.loadedSide);
