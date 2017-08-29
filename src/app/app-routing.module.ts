@@ -3,7 +3,6 @@ import { RouterModule } from "@angular/router";
 
 import { TabsComponent } from 'app/tabs/tabs.component';
 import { ListComponent } from 'app/list/list.component';
-import { CreateCharacterComponent } from 'app/create-character/create-character.component';
 
 const routes = [
   {
@@ -14,7 +13,7 @@ const routes = [
       { path: ':side', component: ListComponent }
     ]
   },
-  { path: 'new-character', component: CreateCharacterComponent },
+  { path: 'new-character', loadChildren: './create-character/create-character.module.ts#CreateCharacterModule' },
   { path: '**', redirectTo: '/characters' }
 ];
 
