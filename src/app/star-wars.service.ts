@@ -37,9 +37,7 @@ export class StarWarsService {
   }
 
   onSideChosen(characterInfo) {
-    const position = this.characters.findIndex((character) => {
-      return character.name === characterInfo.name;
-    });
+    const position = this.characters.findIndex((character) => character.name === characterInfo.name);
     this.characters[position].side = characterInfo.side;
     this.charactersChanged.next();
     this.starWarsLogger.starWarLogger(`Changed side of ${characterInfo.name} to the ${characterInfo.side} side`);
