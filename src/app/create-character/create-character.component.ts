@@ -19,7 +19,6 @@ export class CreateCharacterComponent implements OnInit {
   }
 
   onSubmit(form) {
-    // console.log(form.value);
     if (form.invalid) {
       return;
     }
